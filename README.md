@@ -57,6 +57,43 @@ After these cleaning steps, the cleaned dataframe looked like this:
 
 Note: This only showing the first 5 rows and last few columns for illustration, the actual cleaned dataframe is of 234429 rows × 27 columns
 
+### Univariate Analysis
+We mainly looked at the overall distribution of number of ingredients.
+#### Distribution of Number of Ingredients
+From the histogram below, we found that most recipes contain between 5 to 10 ingredients, with the frequency decreasing as the number of ingredients increases, indicating that simpler recipes with fewer ingredients are more common.
+
+<iframe
+  src="assets/fig_2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+### Bivariate Analysis
+To determine if there's a relationship between two variables, it's crucial to examine how they interact with each other. In this section, we'll employ a scatter plot to visually represent the connection between a recipe's ingredient count and its ratings.
+
+The plot suggests a lack of strong correlation between the number of ingredients and the recipe ratings, as ratings remain relatively consistent across a varying number of ingredients.
+
+<iframe
+  src="assets/fig_4.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+### Interesting Aggregates
+Currently, we employ a scatter plot to explore the relationship between the number of ingredients and recipe ratings. However, considering the potential link between the number of ingredients and the number of steps in a recipe (with the assumption that more steps might involve the addition of more ingredients), we have decided to utilize a pivot table for a more in-depth analysis of the possible connections among the number of steps, number of ingredients, ratings, and calorie content.
+
+In the steps of Data Celaning, we rated the difficulty of making different recipes based on the value of n_steps. Based on this Pivot Table, we found that as the difficulty increases, calories and n_ingredients show an increasing trend, while the changes in ratings are not obvious. This is partially in line with our previous guess.
+
+| diff_level   |   calories |   n_ingredients |   rating |
+|:-------------|-----------:|----------------:|---------:|
+| Easy         |    332.272 |         7.16592 |  4.68805 |
+| Med_1        |    411.129 |         9.11379 |  4.67035 |
+| Med_2        |    487.115 |        10.7553  |  4.68268 |
+| Med_3        |    621.919 |        12.0205  |  4.69694 |
+| Hard         |    676.357 |        13.0796  |  4.681   |
 
 ---
 <iframe
@@ -83,4 +120,3 @@ Note: This only showing the first 5 rows and last few columns for illustration, 
   height="600"
   frameborder="0"
 ></iframe>
->>>>>>> 66fd859 (changed title of website)
