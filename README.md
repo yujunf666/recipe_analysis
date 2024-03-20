@@ -35,6 +35,7 @@ The second dataset contains 731,927 reviews from users regarding recipes on food
 In our study, we mainly used the "nutrition", "n_ingredients", and "rating" columns. These three columns contain important information needed for our research problem.
 
 ---
+<<<<<<< HEAD
 ## Cleaning Data and Exploratory Data Analysis
 ### Data Cleaning
 To simplify our data analysis and integration process, we executed the following data cleaning steps:
@@ -60,6 +61,8 @@ Note: This only showing the first 5 rows and last few columns for illustration, 
 
 
 ---
+=======
+>>>>>>> db811cdd6f199431a7a7e2882c46d23f995181cd
 We will explore the relationship between the complexity of recipes (expressed as number of ingredients) and the public acceptance and nutritional value of these meals. By studying this relationship, we aimed to reveal whether simpler or more complex recipes are preferred, and how this complexity relates to their nutritional significance. Additionally, we will reveal the composition of different foods in relation to their calories. We think research like this can help people make healthier lifestyle choices.
 <iframe
   src="assets/fig_1.html"
