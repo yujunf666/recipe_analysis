@@ -3,6 +3,7 @@ This is a project for DSC80 at UCSD.
 ## Introduction
 In modern times, as cities expand and lifestyles accelerate, individuals face higher stress levels. Research shows that this stress often leads to a preference for high-calorie foods, which are believed to stimulate dopamine production and foster a sense of well-being. However, this dietary choice often comes with health risks.
 
+<<<<<<< HEAD
 We will explore the relationship between the complexity of recipes (expressed as number of ingredients) and the public acceptance and nutritional value of these meals. By studying this relationship, we aimed to reveal whether simpler or more complex recipes are preferred. Additionally, we will reveal the composition of different foods in relation to their calories. We think research like this can help people make healthier lifestyle choices.
 
 ### Introduction to the Datasets in this Study
@@ -34,3 +35,12 @@ The second dataset contains 731,927 reviews from users regarding recipes on food
 In our study, we mainly used the "nutrition", "n_ingredients", and "rating" columns. These three columns contain important information needed for our research problem.
 
 ---
+=======
+We will explore the relationship between the complexity of recipes (expressed as number of ingredients) and the public acceptance and nutritional value of these meals. By studying this relationship, we aimed to reveal whether simpler or more complex recipes are preferred, and how this complexity relates to their nutritional significance. Additionally, we will reveal the composition of different foods in relation to their calories. We think research like this can help people make healthier lifestyle choices.
+<iframe
+  src="assets/fig_1.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+>>>>>>> 66fd859 (changed title of website)
