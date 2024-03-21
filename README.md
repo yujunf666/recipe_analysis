@@ -104,6 +104,47 @@ One of the column in our dataset with missing values that is possibly NMAR is th
 However, with additional info could be got from the "review" column, if users failed to make the recipe, they might not rate and leave a failed message in the review area, so in this case, ratings might be MAR.
 
 ### Missingness Dependency
+Now, we are addressing the absence of ratings in the combined dataset and examining whether this absence is dependent. We are setting up to investigate whether the missingness is related to the 'minutes' and 'total fat (PDV)'.
+
+> Minutes and Rating
+
+- **Null Hypothesis**: The minutes' distribution when the rating is missing is approximately the same as the distribution when the rating is present.
+- **Alternative Hypothesis**: There is a significant difference between the minutes' distribution when the rating is missing and when it is not.
+- **Observed Statistics**: We measure the absolute difference in the mean minutes between these two distributions and graphically represent them through distribution plots.
+
+"""Distribution Graph Needed"""
+
+We shuffle the minutes column 1,000 times, resulting in 1,000 simulated outcomes regarding the absolute differences.
+
+<iframe
+  src="assets/fig_minutes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+- **P-value Calculation**: The calculated p-value is approximately 0.12 (approximately 0.1, if without the limitation of random.seeds). Using 0.05 as the threshold for significance, since 0.12 ≥ 0.05, we failed to reject the null hypothesis that the missingness of the rating is independent of the minutes.
+- **Conclusion**: From this result, it appears that the missingness of ratings is Not Missing At Random (NMAR), indicating that the missingness of ratings do not depend on minutes.
+
+> Total Fat (PDV) and Rating
+
+- **Null Hypothesis**: The total fat (PDV) distribution when the rating is missing is the same as the distribution when the rating is present.
+- **Alternative Hypothesis**: There is a discrepancy between the total fat (PDV) distribution when the rating is absent and when it is available.
+- **Observed Statistics**: The absolute difference in the mean total fat (PDV) of these two distributions is noted, along with the creation of distribution plots for both distributions.
+
+"""Distribution Graph Needed"""
+
+Similarly as above, we shuffle the total fat (PDV) column 1,000 times, resulting in 1,000 simulated outcomes.
+
+<iframe
+  src="assets/fig_total fat (PDV).html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+- **P-value Calculation**: The calculated p-value is approximately 0.0. Using 0.05 as the threshold for significance, since 0.0 ≤ 0.05, we reject the null hypothesis that the missingness of the rating is independent of the calories.
+- **Conclusion**: From this result, it appears that the missingness of ratings is Missing At Random (MAR), indicating that the ratings depend on the total fat (PDV). This suggests that recipes with particularly high or low total fat (PDV) may be more prone to having missing ratings.
 
 
 ---
