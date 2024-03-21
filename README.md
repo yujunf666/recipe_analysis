@@ -240,6 +240,7 @@ In our approach, we initially identified four parameters and explored all meanin
 - **RMSE Interpretation:** The RMSE value gives us the average magnitude of the errors between the predicted and actual values. An RMSE of 37.30, while being relatively low, needs to be considered in the context of the scale of the calorie values. Without knowing the range of calorie values, it's challenging to assess the proportionality of this error.
 
 ### Baseline Model Evaluation
+- To evaluate the baseline model’s ability to generalize to unseen data, the data has been split into a test group with the size 25% of the dataset, and a training group with the rest of the dataset. The training RMSE is 38.167344 and test RMSE is 34.7295. The traing R² is 0.995541, and the test R² is 0.996243. The test RMSE  is even lower than training RMSE. It could be due to luck, but at least, we have low risk of overfitting problem.
 - Considering the high R² value, the model appears to be "good" in terms of its ability to capture the variance in the dataset and predict the calories of a recipe with a high degree of accuracy.
 - However, a few considerations are essential:
   - **Overfitting:** Such a high R² value might indicate overfitting, especially in real-world datasets where perfect prediction is highly unlikely. It's crucial to validate these results on a separate test set or through cross-validation to ensure the model's generalizability.
@@ -267,7 +268,11 @@ This ensures that these features are on a comparable scale, preventing any singl
 
 ### Final Model Performance
 
-We still utilize linear regression as our modeling algorithm because it aligns well with the composition of calories. After using the transformed data as features, we computed the new model's RMSE and R square, which are 37.059139 and 0.995715, respectively. In the baseline model, they were 37.336743 and 0.995650, showing slight improvements. Considering the baseline model already had high accuracy, the increase in accuracy, although not substantial, is still significant.
+We still utilize linear regression as our modeling algorithm because it aligns well with the composition of calories. After using the transformed data as features, we computed the new model's RMSE and R² which are 37.059139 and 0.995715, respectively. In the baseline model, they were 37.336743 and 0.995650, showing slight improvements. 
+
+To evaluate the Final model’s ability to generalize to unseen data, the data has also been split into a test group with the size 25% of the dataset, and a training group with the rest of the dataset. The training RMSE is 37.887891 and test RMSE is 34.457528. The the traing R² is 0.995541, and the test R² is 0.996243. The test RMSE  is even lower than training RMSE. We can see there is very low risk of overfitting problem, and it behaves well in test dataset.
+
+Considering the baseline model already had high accuracy, the increase in accuracy, although not substantial, is still significant.
 
 
 ---
