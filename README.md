@@ -95,6 +95,58 @@ In the steps of Data Celaning, we rated the difficulty of making different recip
 | Med_3        |    621.919 |        12.0205  |  4.69694 |
 | Hard         |    676.357 |        13.0796  |  4.681   |
 
+
+---
+## Assessment of Missingness
+### NMAR Analysis
+One of the column in our dataset with missing values that is possibly NMAR is the `rating` column. If the ratings were np.nan because users chose not to rate (possibly due to dissatisfaction or indifference), and this lack of rating was represented by np.nan, then the data could be considered NMAR.
+
+However, with additional info could be got from the "review" column, if users failed to make the recipe, they might not rate and leave a failed message in the review area, so in this case, ratings might be MAR.
+
+### Missingness Dependency
+
+
+---
+## Hypothesis Testing
+
+The research question we aim to investigate is whether recipes containing a variety of ingredients are rated on the same scale as those with simpler ingredients.
+
+For the purpose of this study, we will classify a recipe as containing diverse ingredients if it consists of ten or more components. Our analysis will involve conducting a permutation test.
+
+### Setting Up the Testing
+
+Null Hypothesis H0: People tend to give recipes with more ingredients the same ratings.
+
+Alternative Hypothesis H1: People tend to give recipes with more ingredients higher ratings.
+
+We would select only the useful columns, including n_ingredients and average rating, and also create new column named `diverse`, which is true if it has steps larger than or eqaul to 10 and false if has steps less 10.
+
+|   | n_ingredients |   ave_rating | diverse   |
+|--:|--------------:|-------------:|:----------|
+| 0 |         9     |            4 | False     |
+| 1 |        11     |            5 | True      |
+| 2 |         9     |            5 | False     |
+| 3 |         9     |            5 | False     |
+| 4 |         9     |            5 | False     |
+
+The reason for choosing one-sided test is that we would assume more ingredients often mean a greater variety of flavors and textures, which can create a more complex and satisfying taste experience, so people would give higher rating for recipes with diverse ingredients.
+
+| complex   |   n_steps |   ave_rating |
+|:----------|----------:|-------------:|
+| False     |   6.52479 |      4.68135 |
+| True      |  12.73752 |      4.67771 |
+
+Given that "ave_rating" is numerical data, it is appropriate to utilize the difference in means as the test statistic. In our research, we will set the significance level to `0.05`
+
+The observed difference in mean is `0.00364915`
+
+### Hypothesis Testing Conclusion
+
+We ran permutation test for 1000 times. The P-value for the testing is 0.118, which means that at significant level of 0.05, we are unable to reject the null hypothesis.
+
+This result could be reasonable, since though recipes with more ingredients may offer us a more complex and satisfying taste experience, more ingredients mean our preparation work becomes more complex, and some people may find it troublesome and therefore not rate the recipe highly. This tradeoff might make the number of ingredients statistically unsignificant in average rating of recipes.
+
+
 ---
 <iframe
   src="assets/fig_1.html"
