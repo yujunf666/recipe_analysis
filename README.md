@@ -271,27 +271,23 @@ We still utilize linear regression as our modeling algorithm because it aligns w
 
 
 ---
-<iframe
-  src="assets/fig_1.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-<iframe
-  src="assets/fig_2.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-<iframe
-  src="assets/fig_3.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-<iframe
-  src="assets/fig_4.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
+## Fairness Analysis
+
+In the fairness test you described, the two groups, Group X and Group Y, are defined based on the median number of steps in a dataset. Specifically:
+
+- **Group X (Less Steps Group)**: Observations from the dataset where the number of steps ('n_steps') is less than or equal to the median number of steps.
+- **Group Y (More Steps Group)**: Observations where the number of steps is greater than the median.
+
+The evaluation metric used in this analysis is the R² score, which measures the proportion of the variance in the dependent variable that is predictable from the independent variable(s). 
+
+The **null hypothesis** (H₀) in this test is that there is no difference in the predictability (as measured by R²) of the outcome between the two groups. This would imply that the number of steps does not impact the fairness of the predictions.
+
+The **alternative hypothesis** (H₁) is that there is a significant difference in R² between the two groups, indicating that the number of steps affects the predictability of the outcome and, consequently, the fairness of the predictions.
+
+The **test statistic** used here is the absolute difference in R² scores between the two groups.
+
+The **significance level** (α) is typically set at 0.05 (5%), although you did not specify this in your summary; this is a common standard for determining statistical significance.
+
+Based on the permutation testing (with 100 permutations), the **resulting p-value** is reported to be 0.0. This p-value represents the probability of observing a test statistic as extreme as, or more extreme than, the one observed under the null hypothesis.
+
+**Conclusion**: Since the p-value is less than the typical significance level of 0.05, we reject the null hypothesis. This indicates that there is a statistically significant difference in the R² scores between the two groups, suggesting that the number of steps influences the fairness of the predictions. It implies that the predictability of the outcome is significantly different when the number of steps is lower than or equal to the median compared to when it is higher, which could indicate a fairness issue in how the model handles different amounts of information (as represented by 'n_steps').
