@@ -1,4 +1,4 @@
-# recipe_analysis
+# Recipe_Analysis
 This is a project for DSC80 at UCSD.
 ## Introduction
 In modern times, as cities expand and lifestyles accelerate, individuals face higher stress levels. Research shows that this stress often leads to a preference for high-calorie foods, which are believed to stimulate dopamine production and foster a sense of well-being. However, this dietary choice often comes with health risks.
@@ -183,12 +183,12 @@ Note that theoretically the first three features should be continuous, but the v
 
 In our approach, we initially identified four parameters and explored all meaningful combinations of these parameters to fit the model iteratively, ultimately identifying the combination that yielded the highest R² value. Subsequently, considering the potential impact of cooking time on calories, we deliberately incorporated the 'minutes' feature. This addition was based on the rationale that certain cooking methods, such as frying, tend to result in higher calorie content due to the use of oils, and these methods are typically quicker. Conversely, methods like boiling, which generally take longer, often result in lower calorie content as fats may be rendered out into the cooking water.
 
-### Performance of the Model
+### Baseline Model Performance
 - The model achieved an R² (R-squared) value of approximately 0.9956 and an RMSE (Root Mean Squared Error) of approximately 37.30. 
 - **R² Interpretation:** The R² value is very close to 1, which suggests that the model is able to explain approximately 99.56% of the variance in the target variable (calories) based on the selected features. This indicates a high level of predictive accuracy in terms of the variability of the data.
 - **RMSE Interpretation:** The RMSE value gives us the average magnitude of the errors between the predicted and actual values. An RMSE of 37.30, while being relatively low, needs to be considered in the context of the scale of the calorie values. Without knowing the range of calorie values, it's challenging to assess the proportionality of this error.
 
-### Evaluation of the Model
+### Baseline Model Evaluation
 - Considering the high R² value, the model appears to be "good" in terms of its ability to capture the variance in the dataset and predict the calories of a recipe with a high degree of accuracy.
 - However, a few considerations are essential:
   - **Overfitting:** Such a high R² value might indicate overfitting, especially in real-world datasets where perfect prediction is highly unlikely. It's crucial to validate these results on a separate test set or through cross-validation to ensure the model's generalizability.
@@ -214,7 +214,7 @@ Secondly, we standardized 'total fat (PDV)', 'protein (PDV)', 'carbohydrates (PD
 
 This ensures that these features are on a comparable scale, preventing any single feature from exerting undue influence on the prediction process due to its larger numerical values. 
 
-### Final Model’s performance
+### Final Model Performance
 
 We still utilize linear regression as our modeling algorithm because it aligns well with the composition of calories. After using the transformed data as features, we computed the new model's RMSE and R square, which are 37.059139 and 0.995715, respectively. In the baseline model, they were 37.336743 and 0.995650, showing slight improvements. Considering the baseline model already had high accuracy, the increase in accuracy, although not substantial, is still significant.
 
