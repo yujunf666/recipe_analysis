@@ -148,6 +148,25 @@ This result could be reasonable, since though recipes with more ingredients may 
 
 
 ---
+## Framing a Prediction Problem
+
+We will predict the "calories" of a recipe, which makes this a regression problem since calories are a  numerical continuous variable. The "calories" column is chosen as the response variable because it represents an important aspect of dietary information that many people consider when selecting a recipe. It is a quantifiable attribute that can significantly impact health and nutrition choices.
+
+For evaluating our regression model, we can use the Coefficient of Determination(R Squared) and Root Mean Squared Error (RMSE)
+
+**R^2** is chosen because it represents the proportion of the variance in the dependent variable that is predictable from the independent variables. It gives a sense of the goodness of fit of our model. An R² value closer to 1 indicates that our model explains a high proportion of the variance in calorie data, making it a valuable metric for assessing the performance of our model in terms of explanatory power.
+
+**RMSE** is useful as it gives more weight to larger errors (due to the squaring part), which can be beneficial if larger errors are particularly undesirable in our context. RMSE is chosen over metrics like Mean Squared Error (MSE) when large errors are not particularly more critical than smaller ones, ensuring a more even-handed evaluation. 
+
+- Features to be considered must be known before a recipe is actually tried and its calories are determined. Suitable features might include:
+  - Recipe ingredients (columns such as "total fat (PDV)")
+  - Preparation time ('minutes')
+  - Number of steps ('n_steps')
+  - Tags associated with the recipe ('tags')
+- We should not use features that would only be known after the recipe's calories are determined, such as the reviews ('review') or the average rating ('avg_rating'), as these may be influenced by the outcome (calories) and would not be available at the time of prediction.
+
+
+---
 <iframe
   src="assets/fig_1.html"
   width="800"
