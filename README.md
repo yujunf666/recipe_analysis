@@ -112,7 +112,12 @@ Now, we are addressing the absence of ratings in the combined dataset and examin
 - **Alternative Hypothesis**: There is a significant difference between the minutes' distribution when the rating is missing and when it is not.
 - **Observed Statistics**: We measure the absolute difference in the mean minutes between these two distributions and graphically represent them through distribution plots.
 
-"""Distribution Graph Needed"""
+<iframe
+  src="assets/dist_minutes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 We shuffle the minutes column 1,000 times, resulting in 1,000 simulated outcomes regarding the absolute differences.
 
@@ -132,7 +137,12 @@ We shuffle the minutes column 1,000 times, resulting in 1,000 simulated outcomes
 - **Alternative Hypothesis**: There is a discrepancy between the total fat (PDV) distribution when the rating is absent and when it is available.
 - **Observed Statistics**: The absolute difference in the mean total fat (PDV) of these two distributions is noted, along with the creation of distribution plots for both distributions.
 
-"""Distribution Graph Needed"""
+<iframe
+  src="assets/dist_total fat (PDV).html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Similarly as above, we shuffle the total fat (PDV) column 1,000 times, resulting in 1,000 simulated outcomes.
 
