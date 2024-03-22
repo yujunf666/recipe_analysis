@@ -278,7 +278,7 @@ Considering the baseline model already had high accuracy, the increase in accura
 ---
 ## Fairness Analysis
 
-In the fairness test you described, the two groups, Group X and Group Y, are defined based on the median number of steps in a dataset. Specifically:
+We divided the dataset as two groups based on the value of n_steps, specifically:
 
 - **Group X (Less Steps Group)**: Observations from the dataset where the number of steps ('n_steps') is less than or equal to the median number of steps.
 - **Group Y (More Steps Group)**: Observations where the number of steps is greater than the median.
