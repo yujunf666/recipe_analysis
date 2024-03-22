@@ -291,7 +291,7 @@ The **alternative hypothesis** (H₁) is that there is a significant difference 
 
 The **test statistic** used here is the absolute difference in R² scores between the two groups.
 
-The **significance level** (α) is typically set at 0.05 (5%), although you did not specify this in your summary; this is a common standard for determining statistical significance.
+The **significance level** (α) is set at 0.05 (5%).
 
 Based on the permutation testing (with 100 permutations), the **resulting p-value** is reported to be 0.0. This p-value represents the probability of observing a test statistic as extreme as, or more extreme than, the one observed under the null hypothesis.
 
